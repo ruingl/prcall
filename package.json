@@ -1,0 +1,11 @@
+{
+  "name": "prcall",
+  "version": "0.0.4",
+  "types": "dist/types/index.d.ts",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typedoc": "^0.28.5",
+    "typescript": "^5.8.3"
+  }
+}
