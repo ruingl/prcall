@@ -19,11 +19,12 @@ function risky(str: string) {
 }
 
 // safely call using pr.pcallSync
-const [success, result] = pr.pcallSync(risky, "Hello!");
-if (!success) {
+const response = pr.pcallSync(risky, "Hello!");
+if (response.error) {
   console.error("an error occured!");
-  console.error("error: " + result);
+  console.error("error: " + response.error);
 }
+// result: response.result
 ```
 
 ## Credits

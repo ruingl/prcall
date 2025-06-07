@@ -1,38 +1,18 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.pcall = pcall;
-exports.pcallSync = pcallSync;
-/**
- * Calls a function protected from errors. (Async)
- *
- * @param fn - The function to call
- * @param args - Arguments of the function
- * @returns Array where the first value is a boolean indicating
- * success, while the other one is either the return value or
- * the caught error.
- */
-async function pcall(fn, ...args) {
-    try {
-        return [true, await fn(...args)];
-    }
-    catch (e) {
-        return [false, e];
-    }
-}
-/**
- * Calls a function protected from errors. (Sync)
- *
- * @param fn - The function to call
- * @param args - Arguments of the function
- * @returns Array where the first value is a boolean indicating
- * success, while the other one is either the return value or
- * the caught error.
- */
-function pcallSync(fn, ...args) {
-    try {
-        return [true, fn(...args)];
-    }
-    catch (e) {
-        return [false, e];
-    }
-}
+__exportStar(require("./types"), exports);
+__exportStar(require("./prcall"), exports);
